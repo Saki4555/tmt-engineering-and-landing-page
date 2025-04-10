@@ -2,7 +2,8 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Home, Info, Settings, FolderKanban } from 'lucide-react';
-
+import logo from '../../assets/logo/logo.png'
+import { Link} from 'react-router'
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br  from-[#16A34A] to-[#0F766E] text-white py-12 relative overflow-hidden">
@@ -18,7 +19,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="bg-[#D1FAE5] p-4 rounded-xl inline-block">
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/738221_image.png" 
+                src={logo} 
                 alt="TMT Logo" 
                 className="w-16 h-16 object-contain"
               />
@@ -64,22 +65,24 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: 'Home', icon: Home },
-                { name: 'About Us', icon: Info },
-                { name: 'Services', icon: Settings },
-                { name: 'Projects', icon: FolderKanban },
-                { name: 'Contact', icon: Phone }
-              ].map(({ name, icon: Icon }) => (
+                { name: 'Home', icon: Home, to: '/' },
+                { name: 'About Us', icon: Info, to: '/about'  },
+                { name: 'Services', icon: Settings, to: '/services'  },
+                { name: 'Policy', icon: FolderKanban, to: '/policy'  },
+                { name: 'Gallery', icon: Phone, to: '/gallery'  },
+                { name: 'Contact Us', icon: Phone, to: '/contact'  },
+              ].map(({ name, icon: Icon, to }) => (
                 <li key={name}>
-                  <a 
-                    href="#" 
+            
+                  <Link 
+                   to={to}
                     className="group flex items-center gap-3 hover:translate-x-2 transition-all duration-300"
                   >
                     <div className="bg-[#D1FAE5] p-1.5 rounded group-hover:bg-white transition-colors">
                       <Icon className="w-4 h-4 text-[#16A34A]" />
                     </div>
                     <span className="group-hover:text-[#D1FAE5]">{name}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,7 +104,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
             <p>© 2024 TMT Quick Service. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-[#D1FAE5] transition-colors">Privacy Policy</a>
+              <Link to='/policy' className="hover:text-[#D1FAE5] transition-colors">Privacy Policy</Link>
               <a href="#" className="hover:text-[#D1FAE5] transition-colors">Terms of Service</a>
             </div>
           </div>

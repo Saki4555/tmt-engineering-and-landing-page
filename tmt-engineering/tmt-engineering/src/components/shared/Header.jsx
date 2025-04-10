@@ -47,7 +47,7 @@ const Header = () => {
         </div>
       </div>
       {/* mobile view */}
-      <div className="flex justify-between px-6 py-2.5 md:hidden">
+      <div className="flex text-[10px] sm:text-sm justify-between px-6 py-2.5 md:hidden">
         <div className="space-y-0.5">
           <a
             href="mailto:tmtquickservice@yahoo.com.sg"
@@ -76,7 +76,7 @@ const Header = () => {
           <hr  className="text-gray-300"/>
           <div className="flex gap-2 justify-center">
           <a
-            href="https://facebook.com"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#D1FAE5]"
@@ -84,7 +84,7 @@ const Header = () => {
             <Facebook className="w-4 h-4" />
           </a>
           <a
-            href="https://instagram.com"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#D1FAE5]"
