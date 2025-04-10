@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+
+
+
+
+@theme {
+    --color-te-prim: #16A34A; /* Primary = Forest Green - Use for main buttons, key headings, and calls to action */
+    --color-te-sec: #D1FAE5; /* Secondary = Soft Sage - Use for background sections or secondary buttons */
+    --color-te-acc: #0F766E; /* Accent = Deep Teal - Use for links, hover effects, and secondary headings */
+    --color-te-back: #F0FDF4; /* Background = Mint Cream - Use for overall background or section backgrounds */
+    --color-te-text: #1E293B; /* Text = Graphite - Use for main text, paragraphs, and footer text */
+}
+@custom-variant hover (&:hover);
+
+
+:root {
+  font-family: "Manrope", sans-serif;
+}
+.neu-shadow {
+    box-shadow: 8px 8px 16px #d8e5dc, -8px -8px 16px #ffffff;
+  }
+  
+  .neu-shadow-inset {
+    box-shadow: inset 4px 4px 8px #d8e5dc, inset -4px -4px 8px #ffffff;
+  }
+  
+ 
+ 
+  .badge-shadow {
+    box-shadow: 5px 5px 10px #d8e5dc, -5px -5px 10px #ffffff;
+  }
+  
+  .badge-shadow-inset {
+    box-shadow: inset 3px 3px 6px #b8d9c6, inset -3px -3px 6px #eaffff;
+  }
+  
