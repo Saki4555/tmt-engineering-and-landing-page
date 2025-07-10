@@ -1,13 +1,19 @@
+import ContactSection from "@/components/ContactUs";
+import EngineeringSection from "@/components/EngineeringSection";
 import { HeroSectionOne } from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import TravelSection from "@/components/TravelSection";
 
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bg-gray-950">
       <Navbar />
     <HeroSectionOne />
-    <div className="h-screen bg-black"></div>
+    <EngineeringSection />
+    <TravelSection />
+    <ContactSection />
+    <div className="h-screen "></div>
     </div>
   );
 }

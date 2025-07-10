@@ -46,7 +46,7 @@ const Navbar = () => {
             alt="logo"
             
           />
-          <span className="self-center text-xl font-bold whitespace-nowrap text-white md:text-2xl">
+          <span className="self-center text-xl font-bold whitespace-nowrap bg-gradient-to-r from-blue-500 via-red-500 to-sky-500 bg-clip-text text-transparent md:text-2xl">
             TMT Group
           </span>
         </a>
