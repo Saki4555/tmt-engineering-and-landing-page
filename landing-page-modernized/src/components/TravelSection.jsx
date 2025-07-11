@@ -4,13 +4,13 @@ import { SectionContainer } from "./SectionContainer";
 
 export default function TravelSection() {
   return (
-    <section className="min-h-screen text-slate-100  py-16 lg:py-20">
+    <section id="travel" className="min-h-screen text-slate-100  py-16 lg:py-20">
       <SectionContainer>
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 lg:gap-10 items-center">
         
         {/* Left Column - Content */}
-        <div className="lg:pr-6">
-          <div className="relative bg-slate-950/80 backdrop-blur-md border border-gray-800 rounded-2xl px-6 py-8 shadow-xl">
+        <div className="lg:pr-6 order-2 md:order-1">
+          <div className="relative  bg-slate-950/80 backdrop-blur-md border border-gray-800 rounded-2xl px-4 sm:px-6 md:px-4 lg:px-6 py-8 shadow-xl">
             <div className="absolute left-0 top-6 h-14 w-1 bg-gradient-to-b from-blue-600 via-red-600 to-sky-500 rounded-r"></div>
 
             <div className="space-y-5 pl-4">
@@ -55,7 +55,7 @@ export default function TravelSection() {
         </div>
 
         {/* Right Column - Image */}
-        <div className="relative hover:scale-105 transform  transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+        <div className="relative order-1 md:order-2 hover:scale-105 transform  transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=870&q=80"
             alt="Travel"

@@ -1,5 +1,6 @@
 import ContactSection from "@/components/ContactUs";
 import EngineeringSection from "@/components/EngineeringSection";
+import Footer from "@/components/Footer";
 import { HeroSectionOne } from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import TravelSection from "@/components/TravelSection";
@@ -13,7 +14,7 @@ export default function Home() {
     <EngineeringSection />
     <TravelSection />
     <ContactSection />
-    
+    <Footer />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { SectionContainer } from "./SectionContainer";
 
 export default function ContactSection() {
   return (
-    <section className="min-h-screen text-slate-100 py-16 lg:py-20 ">
+    <section id="contact" className="min-h-screen text-slate-100 py-16 lg:py-20 ">
       <SectionContainer>
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -18,9 +18,9 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-10 md:gap-7 lg::gap-10 md:grid-cols-2">
           {/* Travel Card */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500 transition">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-teal-500 transition">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Travel</h3>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-red-800 to-sky-500 rounded-xl flex items-center justify-center">
@@ -67,7 +67,7 @@ export default function ContactSection() {
           </div>
 
           {/* Engineering Card */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-green-700 transition">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-green-700 transition">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Engineering</h3>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-red-800 to-sky-500 rounded-xl flex items-center justify-center">

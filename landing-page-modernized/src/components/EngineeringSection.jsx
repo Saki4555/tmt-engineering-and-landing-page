@@ -6,12 +6,12 @@ import { SectionContainer } from "./SectionContainer";
 
 export default function EngineeringSection() {
   return (
-    <section className="min-h-screen relative text-slate-100  py-16 lg:py-20">
+    <section id="engineering" className="min-h-screen relative text-slate-100  py-16 lg:py-20">
       <SectionContainer>
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 lg:gap-10 items-center">
         
         {/* Left Column - Image */}
-        <div className="relative hover:scale-105 transform  transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+        <div className="relative  hover:scale-105 transform  transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Engineering"
@@ -22,7 +22,7 @@ export default function EngineeringSection() {
 
         {/* Right Column - Content */}
         <div className="lg:pl-6">
-          <div className="relative bg-slate-950/80 backdrop-blur-md border border-gray-800 rounded-2xl px-6 py-8 shadow-xl">
+          <div className="relative bg-slate-950/80 backdrop-blur-md border border-gray-800 rounded-2xl px-4 sm:px-6 md:px-4 lg:px-6 py-8 shadow-xl">
             <div className="absolute left-0 top-6 h-14 w-1 bg-gradient-to-b from-blue-600 via-red-600 to-sky-500 rounded-r"></div>
 
             <div className="space-y-5 pl-4">

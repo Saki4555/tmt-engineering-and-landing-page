@@ -8,10 +8,10 @@ import Image from "next/image";
 
 
 const navLinks = [
-  { title: "Tools", link: "#" },
-  { title: "Blog", link: "#" },
-  { title: "Contact", link: "#" },
-  { title: "About", link: "#" },
+  { title: "Engineering", link: "#engineering" },
+  { title: "Travel", link: "#travel" },
+  { title: "Contact", link: "#contact" },
+  
 ];
 
 const Navbar = () => {
@@ -72,7 +72,7 @@ const Navbar = () => {
                   className="relative p-2 text-lg font-medium text-white transition-all duration-300 ease-in-out hover:text-blue-400 md:text-base"
                 >
                   {item.title}
-                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-blue-600 via-red-500 to-sky-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 </a>
               </li>
             ))}
