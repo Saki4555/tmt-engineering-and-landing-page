@@ -6,7 +6,7 @@ import { SectionContainer } from "./SectionContainer";
 
 export default function EngineeringSection() {
   return (
-    <section className="min-h-screen relative text-slate-100 px-4 py-16 lg:py-24">
+    <section className="min-h-screen relative text-slate-100  py-16 lg:py-20">
       <SectionContainer>
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         

@@ -3,9 +3,8 @@ import { SectionContainer } from "./SectionContainer";
 
 export default function ContactSection() {
   return (
-    <section className="min-h-screen overflow-hidden  text-slate-100 px-4 sm:px-6 lg:px-8 py-20">
+    <section className="min-h-screen text-slate-100 py-16 lg:py-20 ">
       <SectionContainer>
-   
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -19,7 +18,7 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2">
           {/* Travel Card */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500 transition">
             <div className="flex items-center justify-between mb-6">
@@ -70,7 +69,7 @@ export default function ContactSection() {
           {/* Engineering Card */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-green-700 transition">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold ">Engineering</h3>
+              <h3 className="text-2xl font-semibold">Engineering</h3>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-red-800 to-sky-500 rounded-xl flex items-center justify-center">
                 <Phone className="w-6 h-6 text-white" />
               </div>
@@ -114,8 +113,6 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-
-      
       </SectionContainer>
     </section>
   );
@@ -129,7 +126,7 @@ function ContactItem({ icon, label, value, href, color }) {
   };
 
   const content = (
-    <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-800 transition">
+    <div className="flex flex-wrap items-start gap-4 p-4 rounded-xl hover:bg-slate-800 transition">
       <div
         className={`w-11 h-11 ${colorClasses[color]} rounded-lg flex items-center justify-center text-white`}
       >
@@ -139,7 +136,9 @@ function ContactItem({ icon, label, value, href, color }) {
         <p className="text-sm text-slate-400 uppercase tracking-wide font-semibold mb-1">
           {label}
         </p>
-        <p className="text-white text-base font-medium break-words">{value}</p>
+        <p className="text-white text-base font-medium break-words whitespace-normal">
+          {value}
+        </p>
       </div>
       {href && (
         <ArrowUpRight className="w-4 h-4 text-slate-500 self-start mt-1" />
@@ -148,7 +147,7 @@ function ContactItem({ icon, label, value, href, color }) {
   );
 
   return href ? (
-    <a href={href} className="block   transition-colors">
+    <a href={href} className="block transition-colors">
       {content}
     </a>
   ) : (

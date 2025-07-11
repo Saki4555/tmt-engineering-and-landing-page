@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from '../assets/tmt.png';
 import Image from "next/image";
-console.log(logo);
+
 
 const navLinks = [
   { title: "Tools", link: "#" },
@@ -34,6 +34,7 @@ const Navbar = () => {
 
   return (
     <nav className={cn('fixed top-0 left-0 w-full backdrop-blur-3xl  z-[999] h-16  shadow-md', )}>
+      <div role="button" onClick={()=> setShowNavbar(false)} className={cn('fixed  inset-0 h-screen bg-black/30', showNavbar ? "block" : 'hidden')}></div>
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* logo */}
         <a
@@ -46,7 +47,7 @@ const Navbar = () => {
             alt="logo"
             
           />
-          <span className="self-center text-xl font-bold whitespace-nowrap bg-gradient-to-r from-blue-500 via-red-500 to-sky-500 bg-clip-text text-transparent md:text-2xl">
+          <span className="self-center text-xl font-extrabold whitespace-nowrap bg-gradient-to-r from-blue-500 via-red-500 to-sky-500 bg-clip-text text-transparent md:text-2xl">
             TMT Group
           </span>
         </a>
@@ -57,8 +58,9 @@ const Navbar = () => {
             <Menu size={28} className="text-white" />
           )}
         </button>
+        
         <div
-          className={`nav-elements fixed top-0 right-0 z-40 h-screen w-64 transform bg-[#0B2715] text-white transition-transform duration-300 ease-in-out md:relative md:top-auto md:right-auto md:h-auto md:w-auto md:translate-x-0 md:bg-transparent ${
+          className={`nav-elements fixed top-0 right-0 z-40 h-screen w-64 transform bg-gray-950 text-white transition-transform duration-300 ease-in-out md:relative md:top-auto md:right-auto md:h-auto md:w-auto md:translate-x-0 md:bg-transparent ${
             showNavbar ? "translate-x-0" : "translate-x-full"
           }`}
         >
