@@ -24,8 +24,8 @@ export default function ContactSection() {
 
   // Common vertical animation variants
   const verticalVariants = {
-    hidden: { y: 80, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
+    hidden: {  opacity: 0 },
+    visible: {  opacity: 1 },
   };
 
   return (
@@ -35,8 +35,8 @@ export default function ContactSection() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1 }}
           variants={verticalVariants}
           className="text-center mb-16"
           style={{ willChange: "transform, opacity" }}
@@ -56,8 +56,8 @@ export default function ContactSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 1.5 }}
             variants={verticalVariants}
             className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-teal-500 transition min-h-[320px]"
             style={{ willChange: "transform, opacity" }}
@@ -111,8 +111,8 @@ export default function ContactSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 1.5, }}
             variants={verticalVariants}
             className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-green-700 transition min-h-[320px]"
             style={{ willChange: "transform, opacity" }}
