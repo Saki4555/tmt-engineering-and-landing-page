@@ -44,7 +44,7 @@ export default function EngineeringSection() {
             transition={{ duration: 0.6 }}
             variants={leftVariants}
           >
-            <div className="relative hover:scale-105 transform transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative hover:scale-105 transform transition-transform duration-500 w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src={engineeringImage || "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                 alt="Engineering"
