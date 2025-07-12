@@ -1,26 +1,67 @@
-import { Phone, Smartphone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+"use client";
+
+import {
+  Phone,
+  Smartphone,
+  Mail,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
 import { SectionContainer } from "./SectionContainer";
+import { motion } from "motion/react";
+import { useIsMobile } from "@/hooks/useMobile";
+import { useState, useEffect } from "react";
 
 export default function ContactSection() {
+  const isMobile = useIsMobile();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
+  // Common vertical animation variants
+  const verticalVariants = {
+    hidden: { y: 80, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
-    <section id="contact" className="min-h-screen text-slate-100 py-16 lg:py-20 ">
+    <section id="contact" className="min-h-screen text-slate-100 py-16 lg:py-20">
       <SectionContainer>
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7 }}
+          variants={verticalVariants}
+          className="text-center mb-16"
+          style={{ willChange: "transform, opacity" }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Contact Us
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 via-red-500 to-sky-600 mx-auto rounded-full mb-6"></div>
           <p className="text-base sm:text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
-            Get in touch with our travel or engineering teams — we're here to
-            help.
+            Get in touch with our travel or engineering teams — we're here to help.
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 gap-10 md:gap-7 lg::gap-10 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-10 md:gap-7 lg:gap-10 md:grid-cols-2">
           {/* Travel Card */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-teal-500 transition">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7 }}
+            variants={verticalVariants}
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-teal-500 transition min-h-[320px]"
+            style={{ willChange: "transform, opacity" }}
+          >
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Travel</h3>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-red-800 to-sky-500 rounded-xl flex items-center justify-center">
@@ -64,10 +105,18 @@ export default function ContactSection() {
                 color="teal"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Engineering Card */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-green-700 transition">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, }}
+            variants={verticalVariants}
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 md:p-5 lg:p-8 hover:border-green-700 transition min-h-[320px]"
+            style={{ willChange: "transform, opacity" }}
+          >
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Engineering</h3>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-red-800 to-sky-500 rounded-xl flex items-center justify-center">
@@ -111,7 +160,7 @@ export default function ContactSection() {
                 color="green"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </SectionContainer>
     </section>

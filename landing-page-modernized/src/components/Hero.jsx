@@ -46,10 +46,10 @@ export function HeroSectionOne() {
           transition={{ duration: 0.3, delay: 1 }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <a href="https://tmt-engineering.vercel.app/" target="_blank" className="w-60 transform rounded-lg bg-green-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700">
+          <a href="https://tmt-engineering.vercel.app/" target="_blank" className="w-60 text-center transform rounded-lg bg-green-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700">
             Explore Engineering
           </a>
-          <a href="http://tmttravelandtours.com/" target="_blank" className="w-60 transform rounded-lg bg-teal-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-700">
+          <a href="http://tmttravelandtours.com/" target="_blank" className="w-60 text-center transform rounded-lg bg-teal-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-700">
             Explore Travel
           </a>
         </motion.div>
@@ -68,10 +68,10 @@ export function HeroSectionOne() {
             </h3>
             <ul className="space-y-3 md:space-y-4 text-white text-sm sm:text-base md:text-lg">
               {[
-                ["Years of Experience", "15"],
-                ["Happy Clients", "45"],
-                ["Quality of Work", "5000"],
-                ["Projects Delivered", "250"],
+                ["Years of Experience", "17"],
+                ["Happy Clients", "60"],
+                ["Quality of Work", "5500"],
+                ["Projects Delivered", "270"],
               ].map(([label, value], i) => (
                 <li
                   key={i}
