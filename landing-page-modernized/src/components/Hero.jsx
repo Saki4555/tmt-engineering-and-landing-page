@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 export function HeroSectionOne() {
   return (
     <div className="relative  mx-auto pt-16 flex max-w-7xl flex-col items-center justify-center">
+      {/* Glow Balls */}
+      <div className="absolute top-[20%] left-[10%] h-36 w-36 rounded-full bg-blue-500 blur-3xl opacity-20 " />
+      <div className="absolute top-[40%] right-[10%] h-32 w-32 rounded-full bg-red-500 blur-3xl opacity-20 " />
+      <div className="absolute bottom-[10%] left-[40%] h-48 w-48 rounded-full bg-sky-500 blur-3xl opacity-20 " />
+
       {/* Decorative Borders */}
       <div className="absolute inset-y-0  left-0 h-full w-[2px] bg-gradient-to-b from-blue-600 via-red-600 to-sky-500"></div>
       <div className="absolute inset-y-0 right-0 h-full w-[2px] bg-gradient-to-b from-blue-600 via-red-600 to-sky-500"></div>
@@ -46,10 +51,18 @@ export function HeroSectionOne() {
           transition={{ duration: 0.3, delay: 1 }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <a href="https://tmt-engineering.vercel.app/" target="_blank" className="w-60 text-center transform rounded-lg bg-green-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700">
+          <a
+            href="https://tmt-engineering.vercel.app/"
+            target="_blank"
+            className="w-60 text-center transform rounded-lg bg-green-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700"
+          >
             Explore Engineering
           </a>
-          <a href="http://tmttravelandtours.com/" target="_blank" className="w-60 text-center transform rounded-lg bg-teal-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-700">
+          <a
+            href="http://tmttravelandtours.com/"
+            target="_blank"
+            className="w-60 text-center transform rounded-lg bg-teal-600 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-700"
+          >
             Explore Travel
           </a>
         </motion.div>
