@@ -31,7 +31,7 @@ export default function EngineeringSection() {
   return (
     <section
       id="engineering"
-      className="min-h-screen relative text-slate-100 py-16 lg:py-20"
+      className="min-h-screen relative text-slate-100 pt-36 lg:pt-40  pb-16 lg:pb-20"
     >
       <SectionContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 lg:gap-10 items-center">
