@@ -1,75 +1,98 @@
+
+
 import React from "react";
-import { Users, Building2, Globe2 } from "lucide-react";
+import {  Calendar, Smile, Award, Truck } from "lucide-react";
 import Missions from "./Missions";
 
 export default function WhoWeAre() {
   return (
-    <div className="relative bg-[var(--color-te-back)] py-24 overflow-hidden">
-      {/* Decorative Elements */}
+    <div className="relative bg-te-back py-24 overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80')] bg-cover bg-center" />
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-te-acc)]/90 to-transparent" /> */}
       </div>
 
       <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8 relative">
-        {/* Header Section */}
+        {/* Header */}
         <div className="max-w-3xl mb-20">
-          <h2 className="text-[var(--color-te-acc)] font-semibold mb-3">
-            Who We Are
-          </h2>
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-te-text)] mb-6 leading-tight">
+          <h2 className="text-te-acc font-semibold mb-3">Who We Are</h2>
+          <h1 className="text-4xl md:text-5xl font-bold text-te-text mb-6 leading-tight">
             Navigating Challenges,
-            <span className="block bg-gradient-to-r from-[var(--color-te-prim)] to-[var(--color-te-acc)] bg-clip-text text-transparent">
-            Engineered for Excellence
+            <span className="block bg-gradient-to-r from-te-prim/80 to-te-acc bg-clip-text text-transparent">
+              Engineered for Excellence
             </span>
           </h1>
-          <p className="text-[var(--color-te-text)]/80 text-lg leading-relaxed">
-          Established in 2009, TMT Quick Service specializes in offshore, marine, and oil & gas engineering. With operations across Singapore, India, and Bangladesh, we deliver expert fabrication, project management, and switchboard manufacturing—backed by a skilled team and a reputation for quality, safety, and timely execution.
+          <p className="text-te-text/80 text-lg leading-relaxed">
+            Established in 2009, TMT Quick Service specializes in offshore,
+            marine, and oil & gas engineering. With operations across Singapore,
+            India, and Bangladesh, we deliver expert fabrication, project
+            management, and switchboard manufacturing—backed by a skilled team
+            and a reputation for quality, safety, and timely execution.
           </p>
         </div>
 
-        {/* Stats Grid */}
-
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
             {
-              icon: Users,
-              number: "700+",
-              label: "EMPLOYEES",
-              description: "Expert professionals dedicated to excellence",
+              icon: Calendar,
+              number: "17",
+              label: "YEARS",
+              description: "Years of Experience",
             },
             {
-              icon: Building2,
-              number: "45+",
-              label: "PROJECTS",
-              description: "Successfully completed major installations",
+              icon: Smile,
+              number: "65+",
+              label: "CLIENTS",
+              description: "Happy Clients",
             },
             {
-              icon: Globe2,
-              number: "5+",
-              label: "COUNTRIES",
-              description: "UAE, OMAN, QATAR, KSA, INDIA",
+              icon: Award,
+              number: "5300+",
+              label: "AWARDS",
+              description: "Quality of Work",
+            },
+            {
+              icon: Truck,
+              number: "270+",
+              label: "DELIVERIES",
+              description: "Projects Delivered",
             },
           ].map((stat, index) => (
-            <div key={index} className="relative flex">
-              <div className="group flex flex-col justify-between bg-[var(--color-te-sec)] rounded-2xl p-8 border border-white/10 shadow-[inset_4px_4px_8px_#c7e9d6,inset_-4px_-4px_8px_#ffffff] w-full transition-all duration-300 hover:bg-[var(--color-te-prim)]/10">
-                <stat.icon className="w-12 h-12 text-[var(--color-te-prim)] group-hover:text-[var(--color-te-acc)] mb-4 transition-colors duration-300" />
-                <div>
-                  <div className="text-4xl font-bold text-[var(--color-te-text)] group-hover:text-[var(--color-te-acc)] mb-2 transition-colors duration-300">
+            <div key={index} className="group relative overflow-hidden border border-te-acc/30">
+              <div className="relative bg-gradient-to-br from-te-sec via-te-sec to-te-sec/90 p-6 rounded-none border border-white/20 backdrop-blur-sm shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)] hover:border-te-prim/30">
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-te-prim/0 via-te-prim/5 to-te-acc/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                {/* Floating orb effect */}
+                <div className="absolute -top-2 -right-2 w-20 h-20 bg-gradient-to-br from-te-prim/20 to-te-acc/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10 text-center">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-te-prim/10 to-te-acc/10 border border-te-prim/20 mb-4 group-hover:border-te-acc/40 transition-all duration-300">
+                    <stat.icon className="w-7 h-7 text-te-prim group-hover:text-te-acc transition-colors duration-300" />
+                  </div>
+                  
+                  <div className="text-3xl font-bold text-te-text group-hover:text-te-acc mb-2 transition-colors duration-300 tracking-tight">
                     {stat.number}
                   </div>
-                  <div className="text-[var(--color-te-acc)] font-semibold group-hover:text-[var(--color-te-prim)] mb-2 transition-colors duration-300">
+                  
+                  <div className="text-te-acc font-semibold text-sm tracking-wider mb-2 group-hover:text-te-prim transition-colors duration-300">
                     {stat.label}
                   </div>
-                  <p className="text-[var(--color-te-text)]/70 group-hover:text-[var(--color-te-text)] transition-colors duration-300">
+                  
+                  <p className="text-te-text/70 text-sm group-hover:text-te-text transition-colors duration-300">
                     {stat.description}
                   </p>
                 </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-te-prim/0 via-te-prim to-te-acc/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full" />
               </div>
             </div>
           ))}
         </div>
 
+        {/* Missions section */}
         <Missions />
       </div>
     </div>

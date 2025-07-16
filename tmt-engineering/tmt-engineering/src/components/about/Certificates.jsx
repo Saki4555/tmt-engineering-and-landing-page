@@ -91,7 +91,7 @@ export default function Certificates() {
     <div className="min-h-screen bg-gradient-to-b  py-8 from-[var(--color-te-back)] to-white">
       {/* Sticky Header */}
       <div
-        className={`sticky top-14 z-10 transition-all duration-300 ${
+        className={`sticky  top-14 z-[1000] transition-all duration-300 ${
           isScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
         }`}
       >

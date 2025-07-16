@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Globe2,
   Building2,
@@ -61,10 +61,10 @@ const companies = [
 
 export default function TMTCompanies() {
   return (
-    <div className="bg-[#F0FDF4] min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-te-back min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#16A34A] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2563EB] mb-4">
             Global Presence, Local Excellence
           </h2>
           <p className="text-[#1E293B] text-lg max-w-2xl mx-auto">
@@ -74,55 +74,35 @@ export default function TMTCompanies() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {companies.map((company, index) => {
-    const Icon = company.icon;
-    return (
-      <div key={index} className="relative group">
-        <div className="h-full rounded-2xl p-6 transition-all duration-500 transform group-hover:-translate-y-2 bg-white text-[#1E293B] shadow-[8px_8px_15px_#d1d9e6,-8px_-8px_15px_#ffffff] group-hover:bg-[#16A34A] group-hover:text-white group-hover:shadow-[inset_6px_6px_12px_rgba(0,0,0,0.15),inset_-6px_-6px_12px_rgba(255,255,255,0.2)]">
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-[#D1FAE5] group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
-              <Icon className="w-6 h-6 text-[#16A34A] group-hover:text-white transition-colors duration-500" />
-            </div>
-          </div>
-
-          <h3 className="text-xl font-semibold mb-2 line-clamp-2 text-[#16A34A] group-hover:text-white">
-            {company.name}
-          </h3>
-
-          <div className="text-sm mb-3 text-[#0F766E] group-hover:text-white/80">
-            {company.type} • {company.location}
-          </div>
-
-          <p className="text-sm text-[#1E293B] group-hover:text-white/90">
-            {company.description}
-          </p>
-
-          {/* <div className="absolute bottom-6 right-6 transform transition-all duration-300 translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-[#0F766E] group-hover:text-white">
-                Learn More
-              </span>
-              <svg
-                className="w-4 h-4 text-[#0F766E] group-hover:text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          {companies.map((company, index) => {
+            const Icon = company.icon;
+            return (
+              <div
+                key={index}
+                className="relative group transition-transform duration-300 hover:scale-105"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </div>
-          </div> */}
-        </div>
-      </div>
-    );
-  })}
-</div>
+                <div className="h-full rounded-none border border-[#CBD5E1] p-6 bg-white text-[#1E293B] shadow-[4px_4px_12px_#d1d9e6,-4px_-4px_12px_#ffffff] group-hover:shadow-[inset_4px_4px_10px_rgba(0,0,0,0.1),inset_-4px_-4px_10px_rgba(255,255,255,0.15)] group-hover:bg-te-acc/80 group-hover:text-white transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-3 rounded-xl bg-[#DBEAFE]  group-hover:bg-white/20 shadow-inner transition-colors duration-300">
+                      <Icon className="w-6 h-6 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold text-[#2563EB] group-hover:text-white line-clamp-2 transition-all duration-300">
+                      {company.name}
+                    </h3>
+                  </div>
 
+                  <div className="text-sm font-medium mb-2 text-[#1E40AF] group-hover:text-white/80">
+                    {company.type} • {company.location}
+                  </div>
+
+                  <p className="text-sm leading-relaxed text-[#1E293B] group-hover:text-white/90">
+                    {company.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

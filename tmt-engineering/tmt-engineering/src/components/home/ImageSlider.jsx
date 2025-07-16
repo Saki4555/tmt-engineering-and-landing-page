@@ -18,7 +18,7 @@ export default function ImageSlider({ images }) {
   return (
     <div className="w-full">
       {/* Main Image */}
-      <div className="relative h-[300px] md:h-[500px] overflow-hidden rounded-lg bg-gray-100">
+      <div className="relative h-[300px] md:h-[500px] overflow-hidden rounded-none bg-gray-100">
         <img
           src={images[currentIndex]}
           alt={`Work ${currentIndex + 1}`}
@@ -29,7 +29,7 @@ export default function ImageSlider({ images }) {
         <div className="absolute inset-0 flex items-center justify-between p-4">
           <button
             onClick={goToPrevious}
-            className="p-2 cursor-pointer rounded-full bg-te-sec hover:bg-te-sec/80 transition-all"
+            className="p-2 cursor-pointer rounded-lg bg-te-sec hover:bg-te-sec/80 transition-all"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -37,7 +37,7 @@ export default function ImageSlider({ images }) {
           </button>
           <button
             onClick={goToNext}
-            className="p-2 cursor-pointer rounded-full bg-te-sec hover:bg-te-sec/80 transition-all"
+            className="p-2 cursor-pointer rounded-lg bg-te-sec hover:bg-te-sec/80 transition-all"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -51,7 +51,7 @@ export default function ImageSlider({ images }) {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`h-16 md:h-20 aspect-video cursor-pointer rounded-md overflow-hidden transition-all duration-300 ${
+            className={`h-16 md:h-20 aspect-video cursor-pointer rounded-none overflow-hidden transition-all duration-300 ${
               currentIndex === index ? 'ring-2 ring-te-prim' : 'opacity-70 hover:opacity-100'
             }`}
             onClick={() => goToSlide(index)}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+
 const ContactForm = () => {
   const [formData, setState] = useState({
     name: "",
@@ -46,41 +47,31 @@ const ContactForm = () => {
         );
         setLoading(false);
       });
-    // console.log("Form submitted:", formData);
-    // Add your form submission logic here
   };
 
   return (
-    <div className="bg-[#F0FDF4] p-6">
+    <div className="bg-[var(--color-te-back)] p-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info Column */}
-
           <div className="lg:col-span-1">
             <div
-              className="bg-white p-4 md:p-8 rounded-lg shadow-lg h-full"
-              style={{
-                boxShadow: "8px 8px 16px #d1e3d6, -8px -8px 16px #ffffff",
-              }}
+              className="bg-white p-4 md:p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)] h-full"
             >
-              <h2 className="text-2xl font-bold text-te-prim mb-6">
+              <h2 className="text-2xl font-bold text-[var(--color-te-prim)] mb-6">
                 Contact Information
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div
-                    className="bg-[#D1FAE5] p-3 rounded-full mr-4"
-                    style={{
-                      boxShadow: "2px 2px 5px #d1e3d6, -2px -2px 5px #ffffff",
-                    }}
+                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
                   >
-                    <Phone className="text-te-acc w-5 h-5" />
+                    <Phone className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
-                  <div className="">
-                    <h4 className="font-semibold text-te-acc">Phone</h4>
-
-                    <a href="tel:+6562521461" className="hover:text-te-prim">
+                  <div>
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">Phone</h4>
+                    <a href="tel:+6562521461" className="hover:text-[var(--color-te-prim)]">
                       +(65) 62521461
                     </a>
                   </div>
@@ -88,26 +79,22 @@ const ContactForm = () => {
 
                 <div className="flex items-center">
                   <div
-                    className="bg-[#D1FAE5] p-3 rounded-full mr-4"
-                    style={{
-                      boxShadow: "2px 2px 5px #d1e3d6, -2px -2px 5px #ffffff",
-                    }}
+                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
                   >
-                    <Mail className="text-te-acc w-5 h-5" />
+                    <Mail className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-te-acc">Email</h4>
-                    {/* <p className="text-te-text">info@example.com</p> */}
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">Email</h4>
                     <div className="flex flex-col text-xs sm:text-base">
                       <a
                         href="mailto:tmtquickservice@yahoo.com.sg"
-                        className="hover:text-te-prim text-te-text"
+                        className="hover:text-[var(--color-te-prim)] text-[var(--color-te-text)]"
                       >
                         tmtquickservice@yahoo.com.sg
                       </a>
                       <a
                         href="mailto:tmtquick@tmtquickservice.com"
-                        className="hover:text-te-prim text-te-text"
+                        className="hover:text-[var(--color-te-prim)] text-[var(--color-te-text)]"
                       >
                         tmtquick@tmtquickservice.com
                       </a>
@@ -117,28 +104,24 @@ const ContactForm = () => {
 
                 <div className="flex items-center">
                   <div
-                    className="bg-[#D1FAE5] p-3 rounded-full mr-4"
-                    style={{
-                      boxShadow: "2px 2px 5px #d1e3d6, -2px -2px 5px #ffffff",
-                    }}
+                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
                   >
-                    <MapPin className="text-te-acc w-5 h-5" />
+                    <MapPin className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-te-acc">Address</h4>
-                    <p className="text-te-text hover:text-te-prim">
-                      60 Benoi Road (EMS Building), Unit #02-01, Singapore
-                      629906
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">Address</h4>
+                    <p className="text-[var(--color-te-text)] hover:text-[var(--color-te-prim)]">
+                      60 Benoi Road (EMS Building), Unit #02-01, Singapore 629906
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12">
-                <h3 className="text-lg font-semibold text-te-acc mb-3">
+                <h3 className="text-lg font-semibold text-[var(--color-te-acc)] mb-3">
                   Business Hours
                 </h3>
-                <p className="text-te-text hover:text-te-prim mb-2">
+                <p className="text-[var(--color-te-text)] hover:text-[var(--color-te-prim)] mb-2">
                   Monday - Friday : 9:00 AM - 6:00 PM
                 </p>
               </div>
@@ -148,12 +131,9 @@ const ContactForm = () => {
           {/* Form Column */}
           <div className="lg:col-span-2">
             <div
-              className="bg-white p-8 rounded-lg shadow-lg"
-              style={{
-                boxShadow: "8px 8px 16px #d1e3d6, -8px -8px 16px #ffffff",
-              }}
+              className="bg-white p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)]"
             >
-              <h2 className="text-2xl font-bold text-te-prim mb-6">
+              <h2 className="text-2xl font-bold text-[var(--color-te-prim)] mb-6">
                 Send us a Message
               </h2>
 
@@ -162,7 +142,7 @@ const ContactForm = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-te-text mb-2"
+                      className="block text-sm font-medium text-[var(--color-te-text)] mb-2"
                     >
                       Full Name
                     </label>
@@ -172,21 +152,16 @@ const ContactForm = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-[#F0FDF4] border border-[#D1FAE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_#d1e3d6,inset_-2px_-2px_5px_#ffffff]"
-                      // className="w-full px-4 py-3 bg-[#F0FDF4] border border-te-sec rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200"
-                      // style={{
-                      //   boxShadow:
-                      //     "inset 2px 2px 5px #d1e3d6, inset -2px -2px 5px #ffffff",
-                      // }}
                       placeholder="John Doe"
                       required
+                      className="w-full px-4 py-3 bg-[var(--color-te-back)] border border-[var(--color-te-sec)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-te-prim)] focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_var(--color-te-sec),inset_-2px_-2px_5px_var(--color-te-back)]"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-te-text mb-2"
+                      className="block text-sm font-medium text-[var(--color-te-text)] mb-2"
                     >
                       Email Address
                     </label>
@@ -196,14 +171,9 @@ const ContactForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-[#F0FDF4] border border-[#D1FAE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_#d1e3d6,inset_-2px_-2px_5px_#ffffff]"
-                      // className="w-full px-4 py-3 bg-[#F0FDF4] border border-te-sec rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200"
-                      // style={{
-                      //   boxShadow:
-                      //     "inset 2px 2px 5px #d1e3d6, inset -2px -2px 5px #ffffff",
-                      // }}
                       placeholder="john@example.com"
                       required
+                      className="w-full px-4 py-3 bg-[var(--color-te-back)] border border-[var(--color-te-sec)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-te-prim)] focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_var(--color-te-sec),inset_-2px_-2px_5px_var(--color-te-back)]"
                     />
                   </div>
                 </div>
@@ -212,7 +182,7 @@ const ContactForm = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-te-text mb-2"
+                      className="block text-sm font-medium text-[var(--color-te-text)] mb-2"
                     >
                       Phone Number
                     </label>
@@ -222,20 +192,15 @@ const ContactForm = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      // className="w-full px-4 py-3 bg-[#F0FDF4] border border-te-sec rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200"
-                      className="w-full px-4 py-3 bg-[#F0FDF4] border border-[#D1FAE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_#d1e3d6,inset_-2px_-2px_5px_#ffffff]"
-                      // style={{
-                      //   boxShadow:
-                      //     "inset 2px 2px 5px #d1e3d6, inset -2px -2px 5px #ffffff",
-                      // }}
                       placeholder="(123) 456-7890"
+                      className="w-full px-4 py-3 bg-[var(--color-te-back)] border border-[var(--color-te-sec)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-te-prim)] focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_var(--color-te-sec),inset_-2px_-2px_5px_var(--color-te-back)]"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-te-text mb-2"
+                      className="block text-sm font-medium text-[var(--color-te-text)] mb-2"
                     >
                       Subject
                     </label>
@@ -245,14 +210,9 @@ const ContactForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-[#F0FDF4] border border-[#D1FAE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_#d1e3d6,inset_-2px_-2px_5px_#ffffff]"
-                      // className="w-full px-4 py-3 bg-[#F0FDF4] border border-te-sec rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200"
-                      // style={{
-                      //   boxShadow:
-                      //     "inset 2px 2px 5px #d1e3d6, inset -2px -2px 5px #ffffff",
-                      // }}
                       placeholder="How can we help you?"
                       required
+                      className="w-full px-4 py-3 bg-[var(--color-te-back)] border border-[var(--color-te-sec)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-te-prim)] focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_var(--color-te-sec),inset_-2px_-2px_5px_var(--color-te-back)]"
                     />
                   </div>
                 </div>
@@ -260,7 +220,7 @@ const ContactForm = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-te-text mb-2"
+                    className="block text-sm font-medium text-[var(--color-te-text)] mb-2"
                   >
                     Your Message
                   </label>
@@ -270,24 +230,16 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    className="w-full px-4 py-3 bg-[#F0FDF4] border border-[#D1FAE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_#d1e3d6,inset_-2px_-2px_5px_#ffffff]"
-                    // className="w-full px-4 py-3 bg-[#F0FDF4] border border-te-sec rounded-lg focus:outline-none focus:ring-2 focus:ring-te-prim focus:border-transparent transition duration-200"
-                    // style={{
-                    //   boxShadow:
-                    //     "inset 2px 2px 5px #d1e3d6, inset -2px -2px 5px #ffffff",
-                    // }}
                     placeholder="Please describe your question or inquiry in detail..."
                     required
+                    className="w-full px-4 py-3 bg-[var(--color-te-back)] border border-[var(--color-te-sec)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-te-prim)] focus:border-transparent transition duration-200 shadow-[inset_2px_2px_5px_var(--color-te-sec),inset_-2px_-2px_5px_var(--color-te-back)]"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center justify-center px-6 py-3 bg-te-prim text-white font-medium rounded-lg hover:bg-te-acc transition duration-300"
-                  style={{
-                    boxShadow: "4px 4px 8px #d1e3d6, -4px -4px 8px #ffffff",
-                  }}
+                  className="flex items-center justify-center px-6 py-3 bg-[var(--color-te-prim)] text-white font-medium rounded-lg hover:bg-[var(--color-te-acc)] transition duration-300 shadow-[4px_4px_8px_var(--color-te-sec),_-4px_-4px_8px_var(--color-te-back)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   {loading ? "Sending..." : "Send Message"}
