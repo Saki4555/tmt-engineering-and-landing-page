@@ -85,7 +85,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[var(--color-te-acc)]">Email</h4>
-                    <div className="flex flex-col text-xs sm:text-base">
+                    <div className="flex flex-col break-all">
                       <a
                         href="mailto:tmtquickservice@yahoo.com.sg"
                         className="hover:text-[var(--color-te-prim)] text-[var(--color-te-text)]"
