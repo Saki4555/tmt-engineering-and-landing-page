@@ -142,7 +142,7 @@ const images = [
 
 function TMTGallery() {
   return (
-    <div className="min-h-screen bg-[var(--color-te-back)] p-8">
+    <div className="min-h-screen bg-[var(--color-te-back)] px-8 py-16">
       <div className="max-w-6xl mx-auto">
         <LightGallery
           speed={500}
@@ -155,7 +155,7 @@ function TMTGallery() {
               href={image}
               className={`gallery-item transform   transition-all duration-200 hover:scale-105 group`}
             >
-              <div className="relative rounded-xl overflow-hidden shadow-[5px_5px_200px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)] bg-[var(--color-te-sec)] transition-all duration-300">
+              <div className="relative rounded-none overflow-hidden shadow-[5px_5px_200px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)] bg-[var(--color-te-sec)] transition-all duration-300">
                 <img
                   src={image}
                   alt={`IN FIELD ${index + 1}`}

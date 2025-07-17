@@ -1,5 +1,6 @@
-import React from 'react';
-import { Building2, Wrench, DollarSign, Users, Globe2 } from 'lucide-react';
+
+import { Building2, Wrench,  Users, Globe2 } from 'lucide-react';
+import aboutCorporate from '../../assets/about-images/about-corporate.jpg';
 
 
 export default function CorporateProfile() {
@@ -45,7 +46,7 @@ export default function CorporateProfile() {
                 <div
                   key={index}
                  
-                  className="flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  className="flex items-center p-4 bg-white  shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="p-3 bg-[var(--color-te-sec)] rounded-full">
                     <item.icon className="w-6 h-6 text-[var(--color-te-prim)]" />
@@ -60,15 +61,16 @@ export default function CorporateProfile() {
             
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-none overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-te-prim/15"></div>
               <img 
-                src="https://plus.unsplash.com/premium_photo-1710363128278-c698c412deeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NnxManQ3LWNYRjNmOHx8ZW58MHx8fHx8"
+                src={aboutCorporate}
+                loading='lazy'
                 alt="Industrial Operations"
                 className="w-full h-[400px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-te-sec p-6 rounded-lg shadow-lg">
+            <div className="absolute -bottom-6 -right-6 bg-te-sec p-6 rounded-none shadow-lg">
               <p className="text-te-prim font-bold text-lg italic">
                 "We do what we do best!"
               </p>

@@ -47,7 +47,7 @@ const Header = () => {
         </div>
       </div>
       {/* mobile view */}
-      <div className="flex text-[10px] sm:text-sm justify-between px-6 py-2.5 md:hidden">
+      <div className="flex text-[11px] sm:text-sm justify-between px-6 py-2.5 md:hidden">
         <div className="space-y-0.5">
           <a
             href="mailto:tmtquickservice@yahoo.com.sg"

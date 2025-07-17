@@ -1,8 +1,9 @@
 
 
-import React from 'react';
+
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router';
+import galleryBg from '../../assets/hero-bgs/gallery-bg.jpg';
 
 export default function GalleryHero() {
   return (
@@ -11,8 +12,9 @@ export default function GalleryHero() {
       <div className="relative h-[50vh] md:h-[60vh]">
         <div className="absolute inset-0 bg-te-prim/15" />
         <img
-          src="https://plus.unsplash.com/premium_photo-1710363128278-c698c412deeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NnxManQ3LWNYRjNmOHx8ZW58MHx8fHx8"
-          className="w-full h-full object-cover object-center"
+          src={galleryBg}
+          loading='lazy'
+          className="w-full h-full object-fit"
         />
         
         {/* Title Overlay with Neumorphism using Tailwind */}

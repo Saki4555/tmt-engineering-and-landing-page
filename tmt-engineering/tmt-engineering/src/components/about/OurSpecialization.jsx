@@ -1,8 +1,7 @@
 
 
-
-import React from "react";
 import { useNavigate } from "react-router";
+import aboutWeDoBg from '../../assets/about-images/about-we-do.jpg';
 
 export const OurSpecialization = () => {
   const navigate = useNavigate();
@@ -10,16 +9,17 @@ export const OurSpecialization = () => {
     <div className="w-full">
       <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full overflow-hidden bg-te-back">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-te-prim/10"></div>
+          <div className="absolute inset-0 bg-te-prim/20"></div>
           <img
-            src="https://plus.unsplash.com/premium_photo-1710363128278-c698c412deeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NnxManQ3LWNYRjNmOHx8ZW58MHx8fHx8"
+            src={aboutWeDoBg}
+            loading="lazy"
             alt="Industrial shipyard"
             className="h-full w-full object-cover"
           />
         </div>
         
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 py-6 text-te-text">
-          <div className="bg-te-back/70   border border-te-acc/40 rounded-xl p-4 sm:p-6 md:p-8 shadow-2xl w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl backdrop-blur-3xl">
+          <div className="bg-white/70   border border-te-acc/40 rounded-none p-4 sm:p-6 md:p-8 shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl backdrop-blur-xl">
             <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide mb-2 md:mb-4 text-shadow-lg relative text-te-text">
               WE ARE{" "}
               <span className="text-te-prim font-extrabold italic relative">
