@@ -23,7 +23,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center space-x-2">
               <img src={logo} className="w-6 md:w-10" alt="TMT Logo" />
-              <p className="text-lg md:text-2xl font-bold text-te-acc">TMT</p>
+              <p className="text-xl md:text-3xl font-extrabold text-te-acc">TMT</p>
             </div>
           </Link>
 

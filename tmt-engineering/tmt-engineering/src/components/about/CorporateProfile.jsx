@@ -1,25 +1,34 @@
-
-import { Building2, Wrench,  Users, Globe2 } from 'lucide-react';
+import { Building2, Wrench, Users, Globe2 } from 'lucide-react';
+import { motion } from 'motion/react';
 import aboutCorporate from '../../assets/about-images/about-corporate.jpg';
-
 
 export default function CorporateProfile() {
   return (
     <div className="bg-te-back overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div 
-          
+
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-te-text)] mb-4">
             A Simple Idea To Do Best For You!
           </h2>
           <div className="w-20 h-1 bg-[var(--color-te-prim)] mx-auto rounded-full"></div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div 
-           
+          
+          {/* Text Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="space-y-6"
           >
             <h3 className="text-2xl font-semibold text-[var(--color-te-text)] mb-6">
@@ -38,44 +47,58 @@ export default function CorporateProfile() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               {[
-                { icon: Building2, text: "Established Infrastructure" },
-                { icon: Wrench, text: "Expert Fabrication" },
-                { icon: Globe2, text: "Global Presence" },
-                { icon: Users, text: "Experienced Team" }
+                { icon: Building2, text: 'Established Infrastructure' },
+                { icon: Wrench, text: 'Expert Fabrication' },
+                { icon: Globe2, text: 'Global Presence' },
+                { icon: Users, text: 'Experienced Team' }
               ].map((item, index) => (
-                <div
+                <motion.div
                   key={index}
-                 
-                  className="flex items-center p-4 bg-white  shadow-sm hover:shadow-md transition-shadow"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 * index }}
+                  className="flex items-center p-4 bg-white shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="p-3 bg-[var(--color-te-sec)] rounded-full">
                     <item.icon className="w-6 h-6 text-[var(--color-te-prim)]" />
                   </div>
                   <span className="ml-4 text-[var(--color-te-text)] font-medium">{item.text}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div
-            
+          {/* Image Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative"
           >
             <div className="relative rounded-none overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-te-prim/15"></div>
-              <img 
+              <img
                 src={aboutCorporate}
-                loading='lazy'
+                loading="lazy"
                 alt="Industrial Operations"
                 className="w-full h-[400px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-te-sec p-6 rounded-none shadow-lg">
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+              className="absolute -bottom-6 -right-6 bg-te-sec p-6 rounded-none shadow-lg"
+            >
               <p className="text-te-prim font-bold text-lg italic">
                 "We do what we do best!"
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

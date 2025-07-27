@@ -1,4 +1,5 @@
 import ServiceCard from "./ServiceCard";
+import { motion } from "motion/react";
 
 const services = [
   {
@@ -92,18 +93,23 @@ export default function OurServices() {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <motion.div
               key={service.number}
-              className="bg-gradient-to-r from-te-prim/40 via-te-sec to-te-prim/40 border border-te-acc/50 rounded-none shadow-md hover:shadow-xl transition-shadow duration-300 p-3"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
             >
-              <ServiceCard
-                number={service.number}
-                title={service.title}
-                description={service.description}
-                image={service.image}
-              />
-            </div>
+              <div className="bg-gradient-to-r from-te-prim/40 via-te-sec to-te-prim/40 border border-te-acc/50 rounded-none shadow-md hover:shadow-xl transition-shadow duration-300 p-3">
+                <ServiceCard
+                  number={service.number}
+                  title={service.title}
+                  description={service.description}
+                  image={service.image}
+                />
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

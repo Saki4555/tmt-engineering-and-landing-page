@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Globe2,
   Building2,
@@ -77,29 +80,38 @@ export default function TMTCompanies() {
           {companies.map((company, index) => {
             const Icon = company.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="relative group transition-transform duration-300 hover:scale-105"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeOut",
+                  delay: index * 0.1,
+                }}
+                viewport={{ once: true, amount: 0.1 }}
               >
-                <div className="h-full rounded-none border border-[#CBD5E1] p-6 bg-white text-[#1E293B] shadow-[4px_4px_12px_#d1d9e6,-4px_-4px_12px_#ffffff] group-hover:shadow-[inset_4px_4px_10px_rgba(0,0,0,0.1),inset_-4px_-4px_10px_rgba(255,255,255,0.15)] group-hover:bg-te-acc/80 group-hover:text-white transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 rounded-xl bg-[#DBEAFE]  group-hover:bg-white/20 shadow-inner transition-colors duration-300">
-                      <Icon className="w-6 h-6 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                <div className="relative group transition-transform duration-300 hover:scale-105">
+                  <div className="h-full rounded-none border border-[#CBD5E1] p-6 bg-white text-[#1E293B] shadow-[4px_4px_12px_#d1d9e6,-4px_-4px_12px_#ffffff] group-hover:shadow-[inset_4px_4px_10px_rgba(0,0,0,0.1),inset_-4px_-4px_10px_rgba(255,255,255,0.15)] group-hover:bg-te-acc/80 group-hover:text-white transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-3 rounded-xl bg-[#DBEAFE]  group-hover:bg-white/20 shadow-inner transition-colors duration-300">
+                        <Icon className="w-6 h-6 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-[#2563EB] group-hover:text-white line-clamp-2 transition-all duration-300">
+                        {company.name}
+                      </h3>
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-[#2563EB] group-hover:text-white line-clamp-2 transition-all duration-300">
-                      {company.name}
-                    </h3>
-                  </div>
 
-                  <div className="text-sm font-medium mb-2 text-[#1E40AF] group-hover:text-white/80">
-                    {company.type} • {company.location}
-                  </div>
+                    <div className="text-sm font-medium mb-2 text-[#1E40AF] group-hover:text-white/80">
+                      {company.type} • {company.location}
+                    </div>
 
-                  <p className="text-sm leading-relaxed text-[#1E293B] group-hover:text-white/90">
-                    {company.description}
-                  </p>
+                    <p className="text-sm leading-relaxed text-[#1E293B] group-hover:text-white/90">
+                      {company.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

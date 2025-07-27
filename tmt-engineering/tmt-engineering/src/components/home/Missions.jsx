@@ -1,5 +1,6 @@
 import React from 'react';
 import { PenLine, Target, Code } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export default function Missions() {
   const items = [
@@ -27,53 +28,60 @@ export default function Missions() {
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="group relative bg-te-sec  p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
               >
-                {/* Background gradient circle */}
                 <div
-                  className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"
-                  style={{
-                    backgroundImage: 'linear-gradient(to bottom right, var(--color-te-prim), var(--color-te-acc))'
-                  }}
-                />
-
-                {/* Icon */}
-                <div className="relative z-10 mb-6">
+                  className="group relative bg-te-sec p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                >
+                  {/* Background gradient circle */}
                   <div
-                    className="inline-flex items-center justify-center p-3 rounded-lg text-white shadow-lg"
+                    className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"
+                    style={{
+                      backgroundImage: 'linear-gradient(to bottom right, var(--color-te-prim), var(--color-te-acc))'
+                    }}
+                  />
+
+                  {/* Icon */}
+                  <div className="relative z-10 mb-6">
+                    <div
+                      className="inline-flex items-center justify-center p-3 rounded-lg text-white shadow-lg"
+                      style={{
+                        backgroundImage: 'linear-gradient(to right, var(--color-te-prim), var(--color-te-acc))'
+                      }}
+                    >
+                      <Icon className="w-7 h-7" />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="relative z-10 text-xl font-bold mb-3 tracking-wider bg-clip-text text-transparent group-hover:text-transparent transition-all duration-300"
                     style={{
                       backgroundImage: 'linear-gradient(to right, var(--color-te-prim), var(--color-te-acc))'
                     }}
                   >
-                    <Icon className="w-7 h-7" />
-                  </div>
+                    {item.title}
+                  </h3>
+
+                  {/* Underline */}
+                  <div
+                    className="relative z-10 w-12 h-1 mb-5 rounded-full group-hover:w-20 transition-all duration-300"
+                    style={{
+                      backgroundImage: 'linear-gradient(to right, var(--color-te-prim), var(--color-te-acc))'
+                    }}
+                  />
+
+                  {/* Description */}
+                  <p className="relative z-10 text-te-text/80 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3
-                  className="relative z-10 text-xl font-bold mb-3 tracking-wider bg-clip-text text-transparent group-hover:text-transparent transition-all duration-300"
-                  style={{
-                    backgroundImage: 'linear-gradient(to right, var(--color-te-prim), var(--color-te-acc))'
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-                {/* Underline */}
-                <div
-                  className="relative z-10 w-12 h-1 mb-5 rounded-full group-hover:w-20 transition-all duration-300"
-                  style={{
-                    backgroundImage: 'linear-gradient(to right, var(--color-te-prim), var(--color-te-acc))'
-                  }}
-                />
-
-                {/* Description */}
-                <p className="relative z-10 text-te-text/80 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,13 +1,13 @@
-
-
+import { motion } from "motion/react";
 import { useNavigate } from "react-router";
 import aboutWeDoBg from '../../assets/about-images/about-we-do.jpg';
 
 export const OurSpecialization = () => {
   const navigate = useNavigate();
+
   return (
     <div className="w-full">
-      <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full overflow-hidden bg-te-back">
+      <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full overflow-hidden bg-te-back">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-te-prim/20"></div>
           <img
@@ -17,9 +17,15 @@ export const OurSpecialization = () => {
             className="h-full w-full object-cover"
           />
         </div>
-        
+
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 py-6 text-te-text">
-          <div className="bg-white/70   border border-te-acc/40 rounded-none p-4 sm:p-6 md:p-8 shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl backdrop-blur-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-white/70 border border-te-acc/40 rounded-none p-4 sm:p-6 md:p-8 shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl backdrop-blur-xl"
+          >
             <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide mb-2 md:mb-4 text-shadow-lg relative text-te-text">
               WE ARE{" "}
               <span className="text-te-prim font-extrabold italic relative">
@@ -28,18 +34,21 @@ export const OurSpecialization = () => {
               </span>{" "}
               IN WHAT WE DO!
             </h2>
-            
+
             <p className="max-w-full md:max-w-2xl text-center text-sm sm:text-base md:text-lg my-2 md:my-4 leading-relaxed bg-te-prim/30 p-2 sm:p-3 md:p-4 rounded-lg border-l-2 border-r-2 border-te-acc/50 text-black">
               We provide quality services to all our clients. Our quality of job
               and timely completion of project is our biggest strength.
             </p>
-            
+
             <p className="text-center text-sm sm:text-base md:text-lg font-medium my-2 md:my-4 tracking-wide bg-gradient-to-r from-te-text to-te-prim bg-clip-text text-transparent">
               We are qualified and certified!
             </p>
-            
+
             <div className="mt-3 md:mt-6 flex justify-center">
-              <button onClick={() => navigate('/')} className="relative overflow-hidden rounded-lg group bg-te-prim px-4 sm:px-6 md:px-8 py-2 md:py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-wider text-te-back transition-all duration-500 hover:bg-te-sec hover:text-te-text active:bg-te-sec cursor-pointer">
+              <button
+                onClick={() => navigate('/')}
+                className="relative overflow-hidden rounded-lg group bg-te-prim px-4 sm:px-6 md:px-8 py-2 md:py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-wider text-te-back transition-all duration-500 hover:bg-te-sec hover:text-te-text active:bg-te-sec cursor-pointer"
+              >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-te-acc/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative z-10 flex items-center">
                   SEE ALL OUR SERVICES
@@ -58,7 +67,7 @@ export const OurSpecialization = () => {
                 </span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

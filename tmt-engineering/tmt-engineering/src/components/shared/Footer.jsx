@@ -1,5 +1,5 @@
-import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+
+import { Phone, Mail, MapPin, Image } from 'lucide-react';
 import { Home, Info, Settings, FolderKanban } from 'lucide-react';
 import logo from '../../assets/logo/logo.png'
 import { Link} from 'react-router'
@@ -69,7 +69,7 @@ export default function Footer() {
                 { name: 'About Us', icon: Info, to: '/about'  },
                 { name: 'Services', icon: Settings, to: '/services'  },
                 { name: 'Policy', icon: FolderKanban, to: '/policy'  },
-                { name: 'Gallery', icon: Phone, to: '/gallery'  },
+                { name: 'Gallery', icon: Image, to: '/gallery'  },
                 { name: 'Contact Us', icon: Phone, to: '/contact'  },
               ].map(({ name, icon: Icon, to }) => (
                 <li key={name}>

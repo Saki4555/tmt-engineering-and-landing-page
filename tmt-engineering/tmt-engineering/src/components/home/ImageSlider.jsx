@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 
 export default function ImageSlider({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,7 +17,13 @@ export default function ImageSlider({ images }) {
   };
 
   return (
-    <div className="w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="w-full"
+    >
       {/* Main Image */}
       <div className="relative h-[300px] md:h-[500px] overflow-hidden rounded-none bg-gray-100">
         <img
@@ -24,14 +31,20 @@ export default function ImageSlider({ images }) {
           alt={`Work ${currentIndex + 1}`}
           className="w-full h-full object-cover transition-opacity duration-500"
         />
-        
+
         {/* Navigation Arrows */}
         <div className="absolute inset-0 flex items-center justify-between p-4">
           <button
             onClick={goToPrevious}
             className="p-2 cursor-pointer rounded-lg bg-te-sec hover:bg-te-sec/80 transition-all"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -39,7 +52,13 @@ export default function ImageSlider({ images }) {
             onClick={goToNext}
             className="p-2 cursor-pointer rounded-lg bg-te-sec hover:bg-te-sec/80 transition-all"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -59,12 +78,12 @@ export default function ImageSlider({ images }) {
             <img
               src={image}
               alt={`Work ${index + 1}`}
-              loading='lazy'
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
