@@ -204,7 +204,7 @@ export default function AllServices() {
 
               <div className="relative z-10">
                 <div className="flex items-center mb-6">
-                  <div className="p-4 rounded-full mr-4 transition-all duration-500 group-hover:scale-110 bg-[var(--color-te-sec)] text-[var(--color-te-prim)] shadow-[4px_4px_8px_#C7DDFE,-4px_-4px_8px_#FFFFFF]">
+                  <div className="p-4 rounded-full mr-4 transition-all duration-500 group-hover:scale-110 bg-white text-[var(--color-te-prim)] shadow-[4px_4px_8px_#C7DDFE,-4px_-4px_8px_#FFFFFF]">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold transition-all duration-300 group-hover:translate-x-2 text-[var(--color-te-prim)]">
