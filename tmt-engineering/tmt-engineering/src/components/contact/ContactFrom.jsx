@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+'use client';
+
+import  { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { motion } from "motion/react";
 
 const ContactForm = () => {
   const [formData, setState] = useState({
@@ -54,7 +57,13 @@ const ContactForm = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info Column */}
-          <div className="lg:col-span-1">
+          <motion.div
+            className="lg:col-span-1"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6 }}
+          >
             <div
               className="bg-white p-4 md:p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)] h-full"
             >
@@ -126,10 +135,16 @@ const ContactForm = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form Column */}
-          <div className="lg:col-span-2">
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
             <div
               className="bg-white p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)]"
             >
@@ -246,7 +261,7 @@ const ContactForm = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
