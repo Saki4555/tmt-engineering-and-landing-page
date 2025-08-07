@@ -64,7 +64,7 @@ export default function Certificates() {
       : certificates.filter((cert) => cert.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b py-8 from-[var(--color-te-back)] to-white">
+    <div className="min-h-screen bg-gradient-to-br py-8 from-[var(--color-te-back)] to-white/70">
       {/* Sticky Header */}
       <div
         className={`sticky top-14 z-[888] transition-all duration-300 ${
@@ -76,7 +76,7 @@ export default function Certificates() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.9 }}
-          className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-4 md:py-6"
+          className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8"
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
             <div>

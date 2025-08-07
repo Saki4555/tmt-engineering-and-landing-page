@@ -65,7 +65,7 @@ const companies = [
 export default function TMTCompanies() {
   return (
     <div className="bg-te-back min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2563EB] mb-4">
             Global Presence, Local Excellence
