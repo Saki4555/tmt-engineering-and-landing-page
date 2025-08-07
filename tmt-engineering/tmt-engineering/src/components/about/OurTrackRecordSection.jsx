@@ -1,6 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Ship, Anchor, Truck, Droplet, Wrench, Sprout } from 'lucide-react';
 
 const OurTrackRecordSection = () => {

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import  { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { useState } from "react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
@@ -46,7 +46,16 @@ const ContactForm = () => {
       .catch((err) => {
         console.log(err);
         toast.error(
-          "Oops! Something went wrong while sending your message. Please try again."
+          <span>
+            Oops! Something went wrong. Please try again later. <br />
+            Or contact us directly at{" "}
+            <a
+              href="mailto:tmtquickservice@yahoo.com.sg"
+              className="underline text-blue-500 hover:text-blue-600"
+            >
+              tmtquickservice@yahoo.com.sg
+            </a>
+          </span>
         );
         setLoading(false);
       });
@@ -64,36 +73,56 @@ const ContactForm = () => {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="bg-white p-4 md:p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)] h-full"
-            >
+            <div className="bg-white p-4 md:p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)] h-full">
               <h2 className="text-2xl font-bold text-[var(--color-te-prim)] mb-6">
                 Contact Information
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div
-                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
-                  >
+                  <div className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4">
                     <Phone className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[var(--color-te-acc)]">Phone</h4>
-                    <a href="tel:+6562521461" className="hover:text-[var(--color-te-prim)]">
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">
+                      Phone
+                    </h4>
+                    <a
+                      href="tel:+6562521461"
+                      className="hover:text-[var(--color-te-prim)]"
+                    >
                       +(65) 62521461
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <div
-                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
-                  >
+                  <div className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4">
+                    <MessageCircle className="text-[var(--color-te-acc)] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">
+                      WhatsApp
+                    </h4>
+                    <a
+                      href="https://wa.me/6587865630"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[var(--color-te-prim)]"
+                    >
+                      +65 87865630
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4">
                     <Mail className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[var(--color-te-acc)]">Email</h4>
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">
+                      Email
+                    </h4>
                     <div className="flex flex-col break-all">
                       <a
                         href="mailto:tmtquickservice@yahoo.com.sg"
@@ -102,25 +131,26 @@ const ContactForm = () => {
                         tmtquickservice@yahoo.com.sg
                       </a>
                       <a
-                        href="mailto:tmtquick@tmtquickservice.com"
+                        href="mailto:marketing@tmtquickservice.com"
                         className="hover:text-[var(--color-te-prim)] text-[var(--color-te-text)]"
                       >
-                        tmtquick@tmtquickservice.com
+                        marketing@tmtquickservice.com
                       </a>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <div
-                    className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4"
-                  >
+                  <div className="bg-[var(--color-te-sec)] shadow-[2px_2px_5px_var(--color-te-sec),_-2px_-2px_5px_var(--color-te-back)] rounded-full p-3 mr-4">
                     <MapPin className="text-[var(--color-te-acc)] w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[var(--color-te-acc)]">Address</h4>
+                    <h4 className="font-semibold text-[var(--color-te-acc)]">
+                      Address
+                    </h4>
                     <p className="text-[var(--color-te-text)] hover:text-[var(--color-te-prim)]">
-                      60 Benoi Road (EMS Building), Unit #02-01, Singapore 629906
+                      60 Benoi Road (EMS Building), Unit #02-01, Singapore
+                      629906
                     </p>
                   </div>
                 </div>
@@ -145,9 +175,7 @@ const ContactForm = () => {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div
-              className="bg-white p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)]"
-            >
+            <div className="bg-white p-8 rounded-none border border-te-acc/30 shadow-[8px_8px_16px_var(--color-te-sec),_-8px_-8px_16px_var(--color-te-back)]">
               <h2 className="text-2xl font-bold text-[var(--color-te-prim)] mb-6">
                 Send us a Message
               </h2>

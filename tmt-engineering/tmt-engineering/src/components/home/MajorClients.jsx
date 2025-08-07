@@ -94,7 +94,7 @@ const MajorClients = () => {
           {logosLine1.map((logo, index) => (
             <div
               key={index}
-              className="mx-6 flex items-center justify-center w-40 h-24 bg-white shadow rounded-lg p-3"
+              className="mx-6 flex items-center justify-center w-36 h-20 lg:w-40 lg:h-24 bg-white shadow rounded-lg p-3"
             >
               <img
                 src={logo}
@@ -110,7 +110,7 @@ const MajorClients = () => {
           {logosLine2.map((logo, index) => (
             <div
               key={index}
-              className="mx-6 flex items-center justify-center w-40 h-24 bg-white shadow rounded-lg p-3"
+              className="mx-6 flex items-center justify-center w-36 h-20 lg:w-40 lg:h-24 bg-white shadow rounded-lg p-3"
             >
               <img
                 src={logo}

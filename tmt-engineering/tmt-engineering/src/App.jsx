@@ -7,10 +7,14 @@ import Policy from "./pages/Policy";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import {  Toaster } from "react-hot-toast";
+import ScrollToTop from "./layouts/ScrollToTop";
+import { HelmetProvider } from "react-helmet-async";
 function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
+      <HelmetProvider>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />} />
@@ -21,6 +25,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
+
+        </HelmetProvider>
       </BrowserRouter>
       <Toaster />
     </>

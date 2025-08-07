@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Hero from "../components/home/Hero";
 import MajorClients from "../components/home/MajorClients";
 import MissionVisionPhilosophy from "../components/home/MissionVisionPhilosophy";
@@ -9,7 +10,10 @@ import WhoWeAre from "../components/home/WhoWeAre";
 
 const Home = () => {
     return (
-        <><Hero />
+        <><Helmet>
+            <title>Home | TMT-Group</title>
+        </Helmet>
+        <Hero />
         <WhoWeAre />
         <MissionVisionPhilosophy />
         <MajorClients />

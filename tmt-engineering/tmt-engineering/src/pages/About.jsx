@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import AboutHero from "../components/about/AboutHero";
 import Certificates from "../components/about/Certificates";
 import CorporateProfile from "../components/about/CorporateProfile";
@@ -7,7 +8,9 @@ import TMTCompanies from "../components/about/TMTCompanies";
 
 const About = () => {
     return (
-        <>
+        <><Helmet>
+            <title>About | TMT-Group</title>
+        </Helmet>
         <AboutHero />
         <CorporateProfile />
         <OurSpecialization />

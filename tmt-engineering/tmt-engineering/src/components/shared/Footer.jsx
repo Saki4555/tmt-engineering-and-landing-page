@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Image } from 'lucide-react';
+import { Phone, Mail, MapPin, Image, MessageCircle } from 'lucide-react';
 import { Home, Info, Settings, FolderKanban } from 'lucide-react';
 import logo from '../../assets/logo/logo.png'
 import { Link} from 'react-router'
@@ -30,35 +30,54 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-4">
-              <a href="tel:+6562521461" className="flex items-center gap-3 group">
-                <div className="bg-[var(--color-te-sec)] p-2 rounded-lg group-hover:bg-white transition-colors">
-                  <Phone className="w-5 h-5 text-[var(--color-te-prim)]" />
-                </div>
-                <span className="group-hover:text-[var(--color-te-sec)] transition-colors">+65 62521461</span>
-              </a>
-              <a href="mailto:tmtquick@tmtquickservice.com" className="flex items-center gap-3 group">
-                <div className="bg-[var(--color-te-sec)] p-2 rounded-lg group-hover:bg-white transition-colors">
-                  <Mail className="w-5 h-5 text-[var(--color-te-prim)]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="group-hover:text-[var(--color-te-sec)] transition-colors">tmtquickservice@yahoo.com.sg</span>
-                  <span className="group-hover:text-[var(--color-te-sec)] transition-colors">tmtquick@tmtquickservice.com</span>
-                </div>
-              </a>
-              <div className="flex items-center gap-3">
-                <div className="bg-[var(--color-te-sec)] p-2 rounded-lg">
-                  <MapPin className="w-5 h-5 text-[var(--color-te-prim)]" />
-                </div>
-                <div>
-                  <p>60 Benoi Road (FMS Building),</p>
-                  <p>Unit #02-01, Singapore 629906</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="space-y-6">
+  <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+  <div className="space-y-4">
+    {/* Phone */}
+    <a href="tel:+6562521461" className="flex items-center gap-3 group">
+      <div className="bg-[var(--color-te-sec)] p-2 rounded-lg group-hover:bg-white transition-colors">
+        <Phone className="w-5 h-5 text-[var(--color-te-prim)]" />
+      </div>
+      <span className="group-hover:text-[var(--color-te-sec)] transition-colors">+65 62521461</span>
+    </a>
+
+    {/* Email */}
+    <a href="mailto:tmtquick@tmtquickservice.com" className="flex items-center gap-3 group">
+      <div className="bg-[var(--color-te-sec)] p-2 rounded-lg group-hover:bg-white transition-colors">
+        <Mail className="w-5 h-5 text-[var(--color-te-prim)]" />
+      </div>
+      <div className="flex flex-col">
+        <span className="group-hover:text-[var(--color-te-sec)] transition-colors">tmtquickservice@yahoo.com.sg</span>
+        <span className="group-hover:text-[var(--color-te-sec)] transition-colors">marketing@tmtquickservice.com</span>
+      </div>
+    </a>
+
+    {/* WhatsApp */}
+    <a
+      href="https://wa.me/6587865630"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 group"
+    >
+      <div className="bg-[var(--color-te-sec)] p-2 rounded-lg group-hover:bg-white transition-colors">
+        <MessageCircle className="w-5 h-5 text-[var(--color-te-prim)]" />
+      </div>
+      <span className="group-hover:text-[var(--color-te-sec)] transition-colors">+65 87865630 (WhatsApp)</span>
+    </a>
+
+    {/* Address */}
+    <div className="flex items-center gap-3">
+      <div className="bg-[var(--color-te-sec)] p-2 rounded-lg">
+        <MapPin className="w-5 h-5 text-[var(--color-te-prim)]" />
+      </div>
+      <div>
+        <p>60 Benoi Road (FMS Building),</p>
+        <p>Unit #02-01, Singapore 629906</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           {/* Quick Links */}
           <div>
